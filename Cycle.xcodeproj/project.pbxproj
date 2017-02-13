@@ -10,11 +10,11 @@
 		69BE9F441E519330003621F1 /* Cycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BE9F3A1E51932F003621F1 /* Cycle.framework */; };
 		69BE9F491E519330003621F1 /* CycleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE9F481E519330003621F1 /* CycleTests.swift */; };
 		69BE9F4B1E519330003621F1 /* Cycle.h in Headers */ = {isa = PBXBuildFile; fileRef = 69BE9F3D1E51932F003621F1 /* Cycle.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		69BE9F571E519406003621F1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BE9F561E519406003621F1 /* RxSwift.framework */; };
 		69BE9F591E5196E5003621F1 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE9F581E5196E5003621F1 /* Run.swift */; };
 		69BE9F5B1E5196FE003621F1 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE9F5A1E5196FE003621F1 /* Driver.swift */; };
 		69BE9F5D1E519715003621F1 /* Observable+Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE9F5C1E519715003621F1 /* Observable+Cycle.swift */; };
 		69BE9F5F1E519740003621F1 /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE9F5E1E519740003621F1 /* Cycle.swift */; };
+		69BE9F621E519A8D003621F1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BE9F601E519A55003621F1 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +39,7 @@
 		69BE9F5A1E5196FE003621F1 /* Driver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		69BE9F5C1E519715003621F1 /* Observable+Cycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Cycle.swift"; sourceTree = "<group>"; };
 		69BE9F5E1E519740003621F1 /* Cycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cycle.swift; sourceTree = "<group>"; };
+		69BE9F601E519A55003621F1 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/Cycle-ckknfjrkpohpikdtghkxejogaenw/Build/Products/Debug-iphonesimulator/RxSwift.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69BE9F571E519406003621F1 /* RxSwift.framework in Frameworks */,
+				69BE9F621E519A8D003621F1 /* RxSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +114,7 @@
 		69BE9F551E519406003621F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				69BE9F601E519A55003621F1 /* RxSwift.framework */,
 				69BE9F561E519406003621F1 /* RxSwift.framework */,
 			);
 			name = Frameworks;
