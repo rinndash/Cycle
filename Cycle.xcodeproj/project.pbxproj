@@ -11,6 +11,10 @@
 		69BE9F491E519330003621F1 /* CycleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE9F481E519330003621F1 /* CycleTests.swift */; };
 		69BE9F4B1E519330003621F1 /* Cycle.h in Headers */ = {isa = PBXBuildFile; fileRef = 69BE9F3D1E51932F003621F1 /* Cycle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		69BE9F571E519406003621F1 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BE9F561E519406003621F1 /* RxSwift.framework */; };
+		69BE9F591E5196E5003621F1 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE9F581E5196E5003621F1 /* Run.swift */; };
+		69BE9F5B1E5196FE003621F1 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE9F5A1E5196FE003621F1 /* Driver.swift */; };
+		69BE9F5D1E519715003621F1 /* Observable+Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE9F5C1E519715003621F1 /* Observable+Cycle.swift */; };
+		69BE9F5F1E519740003621F1 /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE9F5E1E519740003621F1 /* Cycle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +35,10 @@
 		69BE9F481E519330003621F1 /* CycleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleTests.swift; sourceTree = "<group>"; };
 		69BE9F4A1E519330003621F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69BE9F561E519406003621F1 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = "Carthage/Checkouts/RxSwift/build/Debug-iphoneos/RxSwift.framework"; sourceTree = "<group>"; };
+		69BE9F581E5196E5003621F1 /* Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
+		69BE9F5A1E5196FE003621F1 /* Driver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		69BE9F5C1E519715003621F1 /* Observable+Cycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Cycle.swift"; sourceTree = "<group>"; };
+		69BE9F5E1E519740003621F1 /* Cycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cycle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +84,10 @@
 			isa = PBXGroup;
 			children = (
 				69BE9F541E519384003621F1 /* Resources */,
+				69BE9F581E5196E5003621F1 /* Run.swift */,
+				69BE9F5E1E519740003621F1 /* Cycle.swift */,
+				69BE9F5A1E5196FE003621F1 /* Driver.swift */,
+				69BE9F5C1E519715003621F1 /* Observable+Cycle.swift */,
 			);
 			path = Cycle;
 			sourceTree = "<group>";
@@ -169,6 +181,7 @@
 					69BE9F391E51932F003621F1 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = UNVQ33RRMX;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					69BE9F421E519330003621F1 = {
@@ -218,6 +231,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69BE9F591E5196E5003621F1 /* Run.swift in Sources */,
+				69BE9F5B1E5196FE003621F1 /* Driver.swift in Sources */,
+				69BE9F5F1E519740003621F1 /* Cycle.swift in Sources */,
+				69BE9F5D1E519715003621F1 /* Observable+Cycle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +359,7 @@
 		69BE9F4F1E519330003621F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = UNVQ33RRMX;
@@ -354,6 +372,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.riiid.Cycle;
 				PRODUCT_NAME = Cycle;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -361,6 +380,7 @@
 		69BE9F501E519330003621F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = UNVQ33RRMX;
@@ -380,6 +400,7 @@
 		69BE9F521E519330003621F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = UNVQ33RRMX;
 				INFOPLIST_FILE = CycleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -392,6 +413,7 @@
 		69BE9F531E519330003621F1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = UNVQ33RRMX;
 				INFOPLIST_FILE = CycleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
