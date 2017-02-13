@@ -11,7 +11,7 @@ import RxSwift
 
 public typealias Sources = [String: Observable<Any>]
 public typealias Sinks = [String: Observable<Any>]
-public typealias DriversDefinition = [String: Driver<Any, Any>]
+public typealias DriversDefinition = [String: CycleDriver<Any, Any>]
 
 typealias SinkProxies = [String: PublishSubject<Any>]
 

@@ -9,13 +9,13 @@
 import Foundation
 import RxSwift
 
-public struct Driver<Source, Sink> {
+public struct CycleDriver<Source, Sink> {
     let drive: (Observable<Sink>) -> (Observable<Source>, Disposable)
 }
 
-extension Driver {
-    var anyDriver: Driver<Any, Any> {
-        return Driver<Any,Any> { anySink$ in
+extension CycleDriver {
+    var anyDriver: CycleDriver<Any, Any> {
+        return CycleDriver<Any,Any> { anySink$ in
             let concreteSink$ = anySink$.cast(to: Sink.self)
             let (observable, disposable) = self.drive(concreteSink$)
             return (observable.castToAny(), disposable)
