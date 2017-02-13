@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 public struct CycleDriver<Source, Sink> {
-    let drive: (Observable<Sink>) -> (Observable<Source>, Disposable)
+    public let drive: (Observable<Sink>) -> (Observable<Source>, Disposable)
 }
 
 public extension CycleDriver {
