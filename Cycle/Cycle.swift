@@ -17,7 +17,7 @@ public enum CycleKey {
     public static let view: String = "view"
 }
 
-public protocol App: Cycle {
+public protocol CycleApp: Cycle {
     associatedtype Intent
     associatedtype Model
     associatedtype ViewModel
@@ -29,7 +29,7 @@ public protocol App: Cycle {
     static func commands(from sinks$: Observable<[SinkType]>) -> Sinks
 }
 
-public extension App {
+public extension CycleApp {
     static func cycle(_ sources: Sources) -> (Sinks, Disposable) {
         let initModel = initialModel(from: sources)
         let modelProxy = BehaviorSubject<Model>(value: initModel)
