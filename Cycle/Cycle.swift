@@ -26,7 +26,7 @@ public protocol CycleApp: Cycle {
     static func intent(from sources: Sources, model$: Observable<Model>) -> Observable<Intent>
     static func update(model: Model, after intent: Intent) -> (Model, [SinkType])
     static func viewModel(from model: Model) -> ViewModel
-    static func commands(from sinks$: Observable<[SinkType]>) -> Sinks
+    static var commandKeys: [String] { get }
 }
 
 public extension CycleApp {
@@ -45,7 +45,13 @@ public extension CycleApp {
             .subscribe(modelProxy)
         
         let viewModel$ = modelProxy.map(viewModel)
-        var sinks = commands(from: model_effects.map { $0.1 })
+        let sinkType$ = model_effects.map { $0.1 }
+            .flatMap { Observable.from($0) }
+        
+        var sinks: Sinks = [:]
+        commandKeys.forEach { key in
+            sinks[key] = sinkType$.filter { $0.name == key }.castToAny()
+        }
         sinks[CycleKey.view] = viewModel$.castToAny()
         return (sinks, subscription)
     }
