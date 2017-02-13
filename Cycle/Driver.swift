@@ -13,8 +13,14 @@ public struct CycleDriver<Source, Sink> {
     public let drive: (Observable<Sink>) -> (Observable<Source>, Disposable)
 }
 
-public extension CycleDriver {
-    var anyDriver: CycleDriver<Any, Any> {
+extension CycleDriver {
+    public init(_ f: @escaping (Observable<Sink>) -> (Observable<Source>, Disposable)) {
+        drive = f
+    }
+}
+
+extension CycleDriver {
+    public var anyDriver: CycleDriver<Any, Any> {
         return CycleDriver<Any,Any> { anySink$ in
             let concreteSink$ = anySink$.cast(to: Sink.self)
             let (observable, disposable) = self.drive(concreteSink$)
@@ -22,8 +28,3 @@ public extension CycleDriver {
         }
     }
 }
-
-public struct Why<A, B> {
-    public let didNotWork: (Array<A>) -> (Array<B>, Int)
-}
-
