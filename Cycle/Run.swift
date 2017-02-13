@@ -9,11 +9,11 @@
 import Foundation
 import RxSwift
 
-public typealias Sources = [String: Observable<Any>]
-public typealias Sinks = [String: Observable<Any>]
-public typealias DriversDefinition = [String: CycleDriver<Any, Any>]
+public typealias Sources = [AnyHashable: Observable<Any>]
+public typealias Sinks = [AnyHashable: Observable<Any>]
+public typealias DriversDefinition = [AnyHashable: CycleDriver<Any, Any>]
 
-typealias SinkProxies = [String: PublishSubject<Any>]
+typealias SinkProxies = [AnyHashable: PublishSubject<Any>]
 
 fileprivate func makeSinkProxies(_ drivers: DriversDefinition) -> SinkProxies {
     var sinkProxies: SinkProxies = [:]
@@ -25,7 +25,7 @@ fileprivate func makeSinkProxies(_ drivers: DriversDefinition) -> SinkProxies {
 }
 
 fileprivate func callDrivers(_ drivers: DriversDefinition, _ sinkProxies: SinkProxies) -> (Sources, Disposable){
-    var result: [String: Observable<Any>] = [:]
+    var result: [AnyHashable: Observable<Any>] = [:]
     var disposables: [Disposable] = []
     drivers.forEach { key, driver in
         guard let proxy = sinkProxies[key] else { return }

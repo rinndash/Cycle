@@ -13,14 +13,20 @@ public protocol Cycle {
     static func cycle(_ sources: Sources) -> (Sinks, Disposable)
 }
 
+public enum CycleKey {
+    static let view: String = "view"
+}
+
 public protocol App: Cycle {
     associatedtype Intent
     associatedtype Model
+    associatedtype ViewModel
     
     static func initialModel(from sources: Sources) -> Model
     static func intent(from sources: Sources, model$: Observable<Model>) -> Observable<Intent>
-    static func update(model: Model, after intent: Intent) -> (Model, [String: Any])
-    static func groupedCommands(from commands$: Observable<[String: Any]>) -> [String: Observable<Any>]
+    static func update(model: Model, after intent: Intent) -> (Model, [SinkType])
+    static func viewModel(from model: Model) -> ViewModel
+    static func commands(from sinks$: Observable<[SinkType]>) -> Sinks
 }
 
 public extension App {
@@ -29,7 +35,7 @@ public extension App {
         let modelProxy = BehaviorSubject<Model>(value: initModel)
         let intent$ = intent(from: sources, model$: modelProxy)
         let model_effects = intent$
-            .scan((initModel, [:])) { model_effect, intent -> (Model, [String: Any]) in
+            .scan((initModel, [])) { model_effect, intent -> (Model, [SinkType]) in
                 let (model, _) = model_effect
                 return update(model: model, after: intent)
             }
@@ -38,7 +44,9 @@ public extension App {
         let subscription = model_effects.map { $0.0 }
             .subscribe(modelProxy)
         
-        let grouped$ = groupedCommands(from: model_effects.map { $0.1 })
-        return (grouped$, subscription)
+        let viewModel$ = modelProxy.map(viewModel)
+        var sinks = commands(from: model_effects.map { $0.1 })
+        sinks[CycleKey.view] = viewModel$.castToAny()
+        return (sinks, subscription)
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6977D0B41E51B0E100F2B10C /* Sink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6977D0B31E51B0E100F2B10C /* Sink.swift */; };
 		69BE9F441E519330003621F1 /* Cycle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69BE9F3A1E51932F003621F1 /* Cycle.framework */; };
 		69BE9F491E519330003621F1 /* CycleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE9F481E519330003621F1 /* CycleTests.swift */; };
 		69BE9F4B1E519330003621F1 /* Cycle.h in Headers */ = {isa = PBXBuildFile; fileRef = 69BE9F3D1E51932F003621F1 /* Cycle.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6977D0B31E51B0E100F2B10C /* Sink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sink.swift; sourceTree = "<group>"; };
 		69BE9F3A1E51932F003621F1 /* Cycle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cycle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BE9F3D1E51932F003621F1 /* Cycle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cycle.h; sourceTree = "<group>"; };
 		69BE9F3E1E51932F003621F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				69BE9F541E519384003621F1 /* Resources */,
 				69BE9F581E5196E5003621F1 /* Run.swift */,
 				69BE9F5E1E519740003621F1 /* Cycle.swift */,
+				6977D0B31E51B0E100F2B10C /* Sink.swift */,
 				69BE9F5A1E5196FE003621F1 /* Driver.swift */,
 				69BE9F5C1E519715003621F1 /* Observable+Cycle.swift */,
 			);
@@ -237,6 +240,7 @@
 			files = (
 				69BE9F591E5196E5003621F1 /* Run.swift in Sources */,
 				69BE9F5B1E5196FE003621F1 /* Driver.swift in Sources */,
+				6977D0B41E51B0E100F2B10C /* Sink.swift in Sources */,
 				69BE9F5F1E519740003621F1 /* Cycle.swift in Sources */,
 				69BE9F5D1E519715003621F1 /* Observable+Cycle.swift in Sources */,
 			);
