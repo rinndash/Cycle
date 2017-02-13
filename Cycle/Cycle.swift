@@ -14,7 +14,7 @@ public protocol Cycle {
 }
 
 public enum CycleKey {
-    static let view: String = "view"
+    public static let view: String = "view"
 }
 
 public protocol App: Cycle {
