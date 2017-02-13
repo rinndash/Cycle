@@ -13,7 +13,7 @@ public struct CycleDriver<Source, Sink> {
     let drive: (Observable<Sink>) -> (Observable<Source>, Disposable)
 }
 
-extension CycleDriver {
+public extension CycleDriver {
     var anyDriver: CycleDriver<Any, Any> {
         return CycleDriver<Any,Any> { anySink$ in
             let concreteSink$ = anySink$.cast(to: Sink.self)
