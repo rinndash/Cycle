@@ -23,3 +23,7 @@ public extension CycleDriver {
     }
 }
 
+public struct Why<A, B> {
+    public let didNotWork: (Array<A>) -> (Array<B>, Int)
+}
+
