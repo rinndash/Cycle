@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "69BE9F391E51932F003621F1"
-               BuildableName = "Cycle-iOS.framework"
+               BuildableName = "Cycle.framework"
                BlueprintName = "Cycle-iOS"
                ReferencedContainer = "container:Cycle.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "69BE9F391E51932F003621F1"
-            BuildableName = "Cycle-iOS.framework"
+            BuildableName = "Cycle.framework"
             BlueprintName = "Cycle-iOS"
             ReferencedContainer = "container:Cycle.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "69BE9F391E51932F003621F1"
-            BuildableName = "Cycle-iOS.framework"
+            BuildableName = "Cycle.framework"
             BlueprintName = "Cycle-iOS"
             ReferencedContainer = "container:Cycle.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "69BE9F391E51932F003621F1"
-            BuildableName = "Cycle-iOS.framework"
+            BuildableName = "Cycle.framework"
             BlueprintName = "Cycle-iOS"
             ReferencedContainer = "container:Cycle.xcodeproj">
          </BuildableReference>
