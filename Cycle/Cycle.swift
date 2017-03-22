@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-public typealias Cycle = (Sources) -> (Sinks, Disposable)
+typealias Cycle = (Sources) -> (Sinks, Disposable)
 
 public enum CycleKey {
     public static let view: String = "view"
@@ -29,7 +29,7 @@ public protocol CycleApp {
 }
 
 public extension CycleApp {
-    static func app(_ dependency: Dependency) -> Cycle {
+    static func app(_ dependency: Dependency) -> (Sources) -> (Sinks, Disposable) {
         return { sources in
             let initModel = initialModel(from: dependency)
             let modelProxy = BehaviorSubject<Model>(value: initModel)
@@ -49,7 +49,8 @@ public extension CycleApp {
                 .flatMap { Observable.from($0) }
             
             var sinks: Sinks = [:]
-            commandKeys.forEach { key in
+            Array(Set(commandKeys))
+                .forEach { key in
                 sinks[key] = sinkType$.filter { $0.name == key }.castToAny()
             }
             sinks[CycleKey.view] = viewModel$.castToAny()
